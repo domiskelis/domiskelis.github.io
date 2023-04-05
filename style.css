@@ -1,0 +1,108 @@
+@import url("https://fonts.cdnfonts.com/css/katherina-signature");
+@import url("https://fonts.cdnfonts.com/css/zt-gatha-95306");
+body {
+  background-image: url(https://images.unsplash.com/photo-1608501773255-d8cd9e5ba968?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80);
+  background-attachment: fixed;
+  font-family: "ZT Gatha", sans-serif;
+  --main-color: rgba(200,100,20,0.9);
+  --secondary-color: rgba(200,100,20,0.9);
+}
+
+/* Menu bar */
+.header {
+  top: 0;
+  position: fixed;
+  width: 100vw;
+  min-height: 1.9rem;
+  margin: auto;
+  padding: 0.2em;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+/* Landing card */
+.landing {
+  height: 100vh;
+  width: 60vw;
+  margin: auto;
+  display: flex;
+  align-items: center;
+}
+.landing .block-contents {
+  padding: 2em;
+  background-color: var(--main-color);
+  border-radius: 30vw 5vw;
+}
+.landing .block-contents .landing-text {
+  margin-left: 5em;
+}
+.landing .block-contents .landing-image {
+  z-index: -10;
+  font-size: 10em;
+  color: white;
+  position: absolute;
+  top: 8vw;
+  left: 75vw;
+}
+
+.font-handwritten {
+  font-family: "Katherina Signature", sans-serif;
+}
+
+/* About */
+#about-me {
+  display: grid;
+  grid-template-areas: "text portrait";
+}
+#about-me .portrait {
+  max-width: 30vw;
+  grid-area: portrait;
+  opacity: 0.8;
+}
+#about-me .block-contents {
+  grid-area: text;
+}
+
+/* Rest of blocks */
+.block {
+  background-color: rgba(200, 100, 20, 0.9);
+  margin: 10vh auto;
+  width: 80vw;
+}
+.block .block-contents {
+  height: inherit;
+  padding: 2vw;
+  margin: 2vw auto;
+}
+
+.project {
+  min-height: 15vw;
+  width: 60vw;
+  margin: auto;
+  background-color: red;
+}
+.project .square {
+  max-width: 15vw;
+  aspect-ratio: 1/1;
+}
+.project .project-links button {
+  margin: auto;
+  font-size: 1em;
+  background: none;
+  border: none;
+  transition-duration: 0.1s;
+}
+.project .project-links button:hover {
+  transform: scale(1.1);
+}
+
+/* Alternating colours/borders */
+#about-me, #software {
+  background-color: rgba(20, 50, 100, 0.7);
+  border-radius: 2vw 5vw;
+  color: white;
+}
+
+#front-end, #contacts {
+  border-radius: 5vw 2vw;
+}

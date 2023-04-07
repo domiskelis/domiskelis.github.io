@@ -3,9 +3,16 @@
 body {
   background-image: url(https://images.unsplash.com/photo-1608501773255-d8cd9e5ba968?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80);
   background-attachment: fixed;
+  /* Fonts */
   font-family: "ZT Gatha", sans-serif;
+  /* Colour sets */
   --main-color: rgba(200,100,20,0.9);
-  --secondary-color: rgba(200,100,20,0.9);
+  --main-font-clr: rgba(38, 38, 38, 1);
+  --secondary-color: rgba(74, 64, 99, 0.9);
+  --secondary-font-clr: rgba(19, 19, 19, 1);
+}
+body .font-handwritten {
+  font-family: "Katherina Signature", sans-serif;
 }
 
 /* Menu bar */
@@ -18,6 +25,16 @@ body {
   padding: 0.2em;
   text-align: center;
   background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: space-around;
+}
+.header a {
+  display: inline-block;
+  text-decoration: none;
+  transition-duration: 0.5s;
+}
+.header a:hover {
+  transform: scale(1.2);
 }
 
 /* Landing card */
@@ -29,43 +46,75 @@ body {
   align-items: center;
 }
 .landing .block-contents {
+  font-size: 1em;
+}
+.landing .block-contents .landing-main {
   padding: 2em;
+  color: var(--main-font-clr);
   background-color: var(--main-color);
   border-radius: 30vw 5vw;
 }
-.landing .block-contents .landing-text {
-  margin-left: 5em;
+.landing .block-contents .landing-name {
+  transform: translate(10%, 50%);
+  text-shadow: 2px 2px var(--main-font-clr);
+  color: white;
+  font-size: 3em;
 }
 .landing .block-contents .landing-image {
+  font-size: 5em;
+  color: var(--main-color);
+  opacity: 0.9;
+  text-shadow: 2px 2px var(--secondary-font-clr);
+  top: 40vh;
   z-index: -10;
-  font-size: 10em;
-  color: white;
   position: absolute;
-  top: 8vw;
-  left: 75vw;
 }
 
-.font-handwritten {
-  font-family: "Katherina Signature", sans-serif;
+/* Icon-link pair effects */
+.link-btn {
+  margin: auto;
+  transition-duration: 0.5s;
+  display: inline-block;
+}
+.link-btn i {
+  transition-duration: 0.5s;
+}
+
+.link-btn:hover {
+  -webkit-transform: scale(1.2);
+}
+.link-btn:hover i {
+  transform: translate(-0.2em);
 }
 
 /* About */
-#about-me {
+#about-me > .block-contents {
   display: grid;
-  grid-template-areas: "text portrait";
+  grid-template-areas: "text portrait" "links links";
+  grid-template-columns: 2fr 1fr;
 }
-#about-me .portrait {
-  max-width: 30vw;
+#about-me > .block-contents .portrait-box {
   grid-area: portrait;
-  opacity: 0.8;
 }
-#about-me .block-contents {
+#about-me > .block-contents .portrait-box .portrait-img {
+  max-width: 100%;
+  object-fit: contain;
+  -webkit-mask-image: -webkit-radial-gradient(closest-corner, black 0%, black 50%, rgba(0, 0, 0, 0) 70%);
+}
+#about-me > .block-contents .about-text {
   grid-area: text;
+}
+#about-me > .block-contents .profile-links {
+  grid-area: links;
+  margin: auto;
+  width: 100%;
+  height: 2em;
+  display: flex;
+  justify-content: space-between;
 }
 
 /* Rest of blocks */
 .block {
-  background-color: rgba(200, 100, 20, 0.9);
   margin: 10vh auto;
   width: 80vw;
 }
@@ -75,34 +124,48 @@ body {
   margin: 2vw auto;
 }
 
+.text-box {
+  margin-bottom: 1.3em;
+}
+
 .project {
+  display: flex;
   min-height: 15vw;
   width: 60vw;
   margin: auto;
-  background-color: red;
+  justify-content: space-between;
+}
+.project .project-desc {
+  margin-left: 2em;
+}
+.project .project-desc .project-links {
+  height: 2em;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
 }
 .project .square {
-  max-width: 15vw;
-  aspect-ratio: 1/1;
-}
-.project .project-links button {
-  margin: auto;
-  font-size: 1em;
-  background: none;
-  border: none;
-  transition-duration: 0.1s;
-}
-.project .project-links button:hover {
-  transform: scale(1.1);
+  margin-top: -2em;
+  width: 15vw;
+  object-fit: contain;
+  max-width: 100%;
 }
 
 /* Alternating colours/borders */
 #about-me, #software {
-  background-color: rgba(20, 50, 100, 0.7);
+  background-color: var(--secondary-color);
+  color: var(--secondary-font-clr);
   border-radius: 2vw 5vw;
-  color: white;
+}
+#about-me a, #software a {
+  color: var(--main-color);
 }
 
 #front-end, #contacts {
+  background-color: var(--main-color);
+  color: var(--main-font-clr);
   border-radius: 5vw 2vw;
+}
+#front-end a, #contacts a {
+  color: var(--secondary-color);
 }

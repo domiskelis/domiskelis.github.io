@@ -166,6 +166,6 @@ body .font-handwritten {
   color: var(--main-font-clr);
   border-radius: 5vw 2vw;
 }
-#front-end a, #contacts a {
+#landing-card a, #front-end a, #contacts a {
   color: var(--secondary-color);
 }
